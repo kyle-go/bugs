@@ -22,3 +22,7 @@ bugs
     [viewMails setContentInset:edgeInsets];
     
 您敢说这不是Bug？！
+
+###ChangeViews
+将tableView下滑到底部，然后再滑上去发现图片不但位置变了，大小也变了呀。
+原因：自定义Cell的imageView属性和基类UITableViewCell中的属性imageView重名了！！！尼玛重名啊。。。也不给个警告什么的。
