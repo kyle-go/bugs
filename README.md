@@ -28,7 +28,11 @@ bugs
 	{
 	    self.edgesForExtendedLayout = UIRectEdgeNone;
 	}
+神技：
 
+    //透明导航 table content位置不对的BUG
+    //self.automaticallyAdjustsScrollViewInsets = NO;
+    //self.tView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
 您敢说这不是Bug？！
 
 ###ImageMoved
