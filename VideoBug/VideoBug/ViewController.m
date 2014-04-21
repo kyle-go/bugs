@@ -43,7 +43,9 @@
 
 - (void)startTimer
 {
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.314 target:self selector:@selector(updateDisplay:) userInfo:nil repeats:YES];
+    if (!self.timer) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.314 target:self selector:@selector(updateDisplay:) userInfo:nil repeats:YES];
+    }
 }
 
 - (void)stopTimer
@@ -68,7 +70,9 @@
 //touch up
 - (IBAction)touchUp:(id)sender
 {
-    [self startTimer];
+    if (self.player.playing) {
+        [self startTimer];
+    }
     
     self.player.currentTime = self.currentTimeSlider.value;
     NSLog(@"Touch Up...");
